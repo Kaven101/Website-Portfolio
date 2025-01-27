@@ -35,7 +35,6 @@ This portfolio is an evolving project, and I plan to implement the following upd
 - **Portfolio Makeover**: Refining the design and layout for an even better user experience.
 - **Additional Features**:
   - Light/Dark mode toggle for user preference.
-  - Blog section to share personal insights and technical knowledge.
   - Live previews for select projects.
 - **Interactive Elements**: Enhanced animations and hover effects.
 
