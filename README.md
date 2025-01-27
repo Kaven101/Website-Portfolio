@@ -1,6 +1,5 @@
 # Kevin Le's Web Portfolio 🌐
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
 Welcome to my personal web portfolio, a showcase of my skills, projects, and experiences as an IT graduate. Designed with simplicity and elegance, this portfolio highlights my journey, technical expertise, and professional accomplishments.
 
 ## 🛠️ Features
