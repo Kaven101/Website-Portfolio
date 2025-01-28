@@ -46,6 +46,7 @@ header {
 	align-items: center;
 	position: fixed;
 	z-index: 1000;
+	box-shadow: 0 10px 10px -3px var(--button-hover), 0 4px 6px -2px var(--button-hover);
 }
 .header-name {
 	font-size: 1.5rem;
@@ -200,7 +201,7 @@ button:focus,button:active {
 	box-shadow: none;
 }
 /* SOCIAL BUTTONS */
-.fa {
+.fa.fa-github, .fa.fa-linkedin-square, .fa.fa-envelope {
 	font-size: 2.5rem;
 	color: var(--font-color);
 }
@@ -442,8 +443,9 @@ button:focus,button:active {
 	transition: transform 0.3s ease;
 }
 /*Project Links */
-.fa.fa-external-link, .fa.fa-code {
+.fa-external-link, .fa-code {
 	font-size: 1rem;
+	color: var(--font-color);
 	margin: 1rem 1rem 0 0;
 	border-radius: 1rem;
 	padding: 0.5rem 2rem;
