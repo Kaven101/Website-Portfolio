@@ -13,24 +13,32 @@
   <body class="finisher-header">
 	<!-- NAVIGATION BAR --> 
 	<header>
-<a class="header-name" href="#welcome-section"><span class="highlight">KL</span></a>
-<nav id="navbar">
-		<ul>
-			<li><a class="nav-link" href="#welcome-section">Home</a></li>
-			<li><a class="nav-link" href="#about-me-section">About</a></li>
-			<li><a class="nav-link" href="#skills-section">Skills</a></li>
-			<li><a class="nav-link" href="#projects">Projects</a></li>
-			<li><a class="nav-link" href="#contact-section">Contact</a></li>
-		</ul>
+<nav>
+			<input type="checkbox" id="sidebar-active">
+			<label for="sidebar-active" class="open-sidebar-button">
+			<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="undefined"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+			</label>
+			<label id="overlay" for="sidebar-active"></label>
+			<div class="links-container">
+				<label for="sidebar-active" class="close-sidebar-button">
+					<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="undefined"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+					</label>
+			<a class="header-name" href="#welcome-section"><span class="highlight">KL</span></a>
+			<a class="nav-link" href="#welcome-section">Home</a>
+			<a class="nav-link" href="#about-me-section">About</a>
+			<a class="nav-link" href="#skills-section">Skills</a>
+			<a class="nav-link" href="#projects">Projects</a>
+			<a class="nav-link" href="#contact-section">Contact</a>
+			<button class="hire-me">Hire Me</button>
+			</div>
 	</nav>
-	<button class="hire-me">Hire Me</button>
 	</header>
 	<!--WELCOME SECTION -->
 <!--WELCOME TEXT-->
 <section id="welcome-section">
 	<div class="welcome-container">
 		<div class="welcome-text">
-			<p class="intro-text">HELLO WORLD!<span class="wave">👋</span></p>
+			<p class="intro-text">HELLO WORLD!</p>
 			<h1>I'm Kevin Le</h1>
 			<p class="sub-text">I am an <span class="highlight">IT Graduate</span> located in</p>
 			<div class="location">
@@ -84,7 +92,7 @@
 <!--SKILLS SECTION -->
 <!-- Make Bento Grid: Front-end, Back-end, Tools, Learning -->
 <section id="skills-section" class="skills">
-	<h2 class="skills-header">My Technologies</h2>
+	<h2 class="skills-header">My Tech Stack</h2>
 	<div class="skills-container">
 		<div class="skills-card">
 			<h3 class="skills-card-header primary">Proficiencies</h3>
@@ -202,14 +210,14 @@
 		</div>
 		<!--CONTACT FORM -->
 		<div class="contact-form">
-			<form id="form" action="" method="post">
-				<label class="contact-form">Full Name</label>
+			<form id="contact-form" action="" method="post">
+				<label>Full Name</label>
 				 <input id="fullname" name="fullname" type="text" placeholder="Enter full name..." />
-			   <label class="contact-form">Email</label>
+			   <label>Email</label>
 					<input id="email" name="email" type="email" placeholder="Enter email address..." />
-					<label class="contact-form">Subject</label>
+					<label>Subject</label>
 					<input id="subject" name="subject" type="text" placeholder="Enter subject..." />
-					<label class="contact-form">Message</label>
+					<label>Message</label>
 					<textarea id="message" name="message" placeholder="Enter message..."></textarea>
 					<input id="submit" class="btn" type="submit" value="Send Message" />
 		</form>
