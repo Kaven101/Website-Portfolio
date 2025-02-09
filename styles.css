@@ -25,7 +25,7 @@ body {
   z-index: 1;
 }
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", serif;
   scroll-behavior: smooth;
   text-decoration: none;
 }
@@ -38,17 +38,24 @@ body {
 .tertiary {
   color: var(--tertiary-color);
 }
+p {
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  line-height: 150%;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
 /* NAVIGATION BAR */
 nav {
   height: 3.75rem;
   background-color: var(--background-color);
-  box-shadow: 0 5px 30px -3px var(--button-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
   position: fixed;
   z-index: 1000;
+  box-shadow: 0 5px 50px var(--background-color);
+  animation: fadeIn 1.2s ease-in;
 }
 .links-container {
   display: flex;
@@ -64,7 +71,7 @@ nav a.nav-link {
   text-decoration: none;
   align-items: center;
   color: var(--font-color, white);
-  font-size: 1rem;
+  font-size: 1.25rem;
   transition: transform 0.3s ease;
   font-weight: bold;
   letter-spacing: -0.5px;
@@ -78,19 +85,17 @@ nav a.nav-link:hover {
   margin-right: auto;
   margin-left: 1rem;
   padding: 0.5rem;
-  border-bottom: 2px solid var(--border-outline);
-  border-left: 2px solid var(--border-outline);
   border-radius: 50%;
-  font-weight: 600;
+  font-weight: 700;
   transition: transform 0.3s ease;
 }
 .header-name:hover {
   transform: scale(1.1);
 }
-.hire-me {
-  font-size: clamp(0.8rem, 5vh, 1rem);
-  margin-left: auto;
+.resume {
+  font-size: clamp(0.8rem, 5vh, 1.125rem);
   margin-right: 1rem;
+  margin-left: auto;
   padding: 0.5rem 1rem;
   border-radius: 3rem;
   border: 1px solid transparent;
@@ -102,6 +107,11 @@ nav a.nav-link:hover {
   font-weight: bold;
   letter-spacing: -0.5px;
 }
+.resume:hover {
+  background: var(--button-hover);
+  box-shadow: 0 10px 5px -3px var(--button-hover),
+    0 4px 6px -2px var(--button-hover);
+}
 nav svg {
   fill: var(--font-color);
 }
@@ -112,8 +122,9 @@ nav svg {
 .close-sidebar-button {
   display: none;
 }
-/* SIDEBAR */
-@media (max-width: 620px) {
+
+/* SIDEBAR + OTHER MEDIA QUERIES*/
+@media (max-width: 894px) {
   .links-container {
     flex-direction: column;
     align-items: flex-start;
@@ -122,7 +133,7 @@ nav svg {
     right: -100%;
     width: 250px;
     background-color: var(--background-color);
-    box-shadow: -5px 0 15px var(--button-color);
+    box-shadow: -5px 0 15px var(--font-color);
     transition: 0.5s ease-out;
     z-index: 1000;
   }
@@ -154,8 +165,11 @@ nav svg {
   .header-name {
     margin: 0 auto 1rem 2rem;
   }
-  .hire-me {
-    margin: 1rem auto 1rem 1rem;
+  .resume {
+    margin: 0.5rem auto 1rem 1rem;
+  }
+  .contact-header {
+    padding-top: 5rem;
   }
 }
 /* WELCOME SECTION */
@@ -169,37 +183,28 @@ nav svg {
 .welcome-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 4rem;
+  justify-content: start;
   align-items: center;
-  width: clamp(300px, 90%, 1200px);
+  width: clamp(300px, 90%, 1500px);
+  padding: 2rem;
 }
-.welcome-text {
-  max-width: 600px;
-}
-.intro-text {
-  font-size: clamp(1rem, 100vh, 1.5rem);
-  color: var(--primary-color);
-  letter-spacing: -0.5px;
-  line-height: 120%;
-  margin-bottom: 0;
-}
-h1 {
-  font-size: 4rem;
-  letter-spacing: -1px;
-  line-height: 110%;
+.name-intro {
+  font-size: clamp(2.5rem, 10vw, 20rem);
+  letter-spacing: -2px;
+  line-height: 100%;
   margin: 0;
+  animation: scaleIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
-.sub-text {
-  font-size: 1.5rem;
+.subtext-intro {
+  font-size: clamp(2rem, 5vw, 5rem);
+  letter-spacing: -2px;
   line-height: 120%;
-  letter-spacing: -0.5px;
-  margin: 0.5rem 0;
-}
-.location {
-  display: flex;
-  font-size: 1rem;
-  line-height: 120%;
+  margin: 0;
+  animation: scaleIn 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 .highlight {
   background-image: var(--highlight-color);
@@ -210,120 +215,26 @@ h1 {
   background-size: 300%;
   animation: highlight 5s infinite alternate-reverse;
 }
-/* WELCOME BUTTONS */
-.welcome-buttons {
-  margin: 16px 0;
-}
-.contact-btn {
-  background-color: var(--button-color);
-  color: var(--font-color);
-  font-weight: bold;
-  border: 1px solid transparent;
-  border-radius: 30px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: -0.5px;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
-}
-.resume-btn {
-  background-color: rgb(15, 15, 15);
-  font-weight: bold;
-  color: var(--font-color);
-  border: 1px solid var(--border-outline);
-  border-radius: 30px;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  letter-spacing: -0.5px;
-  font-size: 1rem;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
-}
-.contact-btn:hover {
-  background-color: #4513c5;
-}
-.resume-btn:hover {
-  background-color: #161616;
-}
-button:hover {
-  box-shadow: 0 10px 15px -3px var(--button-hover),
-    0 4px 6px -2px var(--button-hover);
-}
-button:focus,
-button:active {
-  opacity: 0.85;
-  box-shadow: none;
-}
-/* SOCIAL BUTTONS */
-.fa.fa-github,
-.fa.fa-linkedin-square,
-.fa.fa-envelope {
-  font-size: 2.5rem;
-  color: var(--font-color);
-}
-.social-icons {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.social-icons a:nth-of-type(1) {
-  margin: 0 8px;
-}
-.social-icons a:nth-of-type(2) {
-  margin: 0 8px;
-}
-.social-icons a:nth-of-type(3) {
-  margin: 0 8px;
-}
-.fa.fa-github:hover {
-  color: var(--primary-color);
-  transition: color 0.5s ease;
-}
-.fa.fa-linkedin-square:hover {
-  color: var(--secondary-color);
-  transition: color 0.5s ease;
-}
-.fa.fa-envelope:hover {
-  color: var(--tertiary-color);
-  transition: color 0.5s ease;
-}
-/* PROFILE PICTURE + SECRET PICTURE */
-.welcome-image {
-  width: 350px;
-  height: 350px;
-  perspective: 1000px;
-}
-.welcome-image-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-.welcome-image:hover .welcome-image-inner {
-  transform: rotateY(180deg);
-}
-.welcome-image-front,
-.welcome-image-back {
+.circle {
+  right: 20%;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  z-index: 0;
+  --size: calc(100% - 5 / 6 * 100%);
+  background: conic-gradient(
+      transparent var(--size),
+      var(--border-outline) var(--size)
+    )
+    border-box;
+  width: clamp(320px, 50%, 750px);
+  aspect-ratio: 1;
   border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 10px 15px -3px var(--button-hover),
-    0 4px 6px -2px var(--button-hover);
-}
-.welcome-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.welcome-image-front {
-  transform: rotateY(0deg);
-}
-.welcome-image-back {
-  transform: rotateY(180deg);
+  border: 1rem solid transparent;
+  rotate: -120deg;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: scaleIn 1s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
 }
 /* ABOUT ME SECTION */
 #about-me-section {
@@ -337,9 +248,10 @@ button:active {
 .about-me-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   justify-content: space-between;
   width: 70%;
-  max-width: 700px;
+  max-width: 800px;
 }
 .about-me-header {
   text-align: center;
@@ -347,23 +259,14 @@ button:active {
   letter-spacing: -1px;
   margin-bottom: 2.5rem;
 }
-.about-me.paragraph {
-  line-height: 150%;
-  letter-spacing: -0.5px;
-}
 .summary-header {
   letter-spacing: -0.5px;
   margin: 0;
   padding: 0;
 }
-.education-title,
-.certificate-title {
-  font-size: 1rem;
-  letter-spacing: -0.5px;
-}
 .education-subtext,
 .certificate-subtext {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 /* SKILLS SECTION */
 #skills-section {
@@ -412,7 +315,8 @@ button:active {
 }
 .skills-list > li {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.5px;
 }
@@ -423,6 +327,7 @@ button:active {
 /* PROJECT SECTION */
 #project-section {
   min-height: 80vh;
+  width: 100%;
 }
 .project-header {
   font-size: 2rem;
@@ -430,38 +335,43 @@ button:active {
   padding-top: 6rem;
   letter-spacing: -1px;
 }
-.project-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  margin: 0 auto;
-}
 .project-box {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
 }
-.project-title {
-  line-height: 85%;
-  letter-spacing: -1px;
+.project-description {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 500px;
+  padding-inline: 1rem;
 }
 .project-text {
   line-height: 150%;
   letter-spacing: -0.5px;
+}
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  margin-inline-start: 1rem;
 }
 .project-tags {
   display: flex;
   flex-wrap: wrap;
 }
 .project-tag {
-  border: 1px solid var(--border-outline);
+  border: 2px solid var(--border-outline);
   border-radius: 1rem;
   padding: 0.5rem;
   margin: 0.5rem;
   font-size: 0.75rem;
+  font-weight: 500;
   flex-basis: 10%;
   flex-wrap: none;
   text-align: center;
@@ -471,14 +381,8 @@ button:active {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
 }
-.project-description {
-  display: flex;
-  max-width: 480px;
-  flex-direction: column;
-  margin: 0 1rem;
-}
 .grow {
-  flex-grow: 0.5;
+  flex-grow: 0.75;
 }
 .project-box:nth-of-type(2) {
   display: flex;
@@ -488,10 +392,12 @@ button:active {
   background-color: var(--background-color);
   border: 1px solid var(--border-outline);
   border-radius: 10px;
-  padding: 20px;
-  margin: 3rem;
-  aspect-ratio: 16/9;
+  margin: 1rem;
+  aspect-ratio: 16/9 auto;
+  width: clamp(120px, 90%, 500px);
   transition: transform 0.2s ease;
+  line-height: 85%;
+  letter-spacing: -1px;
 }
 .project-tile:hover {
   transform: translateY(-10px);
@@ -517,7 +423,7 @@ button:active {
   background: var(--tertiary-color);
 }
 .fa.fa-external-link {
-  border: 1px solid var(--border-outline);
+  border: 2px solid var(--border-outline);
 }
 .fa.fa-external-link:hover,
 .fa.fa-code:hover {
@@ -554,6 +460,7 @@ button:active {
   color: var(--primary-color);
   font-size: 1.25rem;
   line-height: 100%;
+  padding: 0.5rem;
   letter-spacing: -0.75px;
 }
 .contact-info p {
@@ -562,6 +469,13 @@ button:active {
 }
 .fa.fa-envelope-o {
   font-size: 1.75rem;
+}
+.fa.fa-github {
+  font-size: 2rem;
+  padding-right: 0.5rem;
+}
+.fa.fa-linkedin-square {
+  font-size: 2rem;
   padding-right: 0.5rem;
 }
 .fa.fa-mobile {
@@ -574,9 +488,43 @@ button:active {
 .email-details {
   padding-left: 0.75rem;
 }
+.copy-button {
+  background: transparent;
+  color: var(--font-color);
+  font-size: clamp(0.875rem, 5vw, 1.125rem);
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.copy-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.github-details {
+  padding-left: 0.75rem;
+}
+.linkedin-details {
+  padding-left: 0.75rem;
+}
+/* CONTACT INFORMATION LINKS */
+p a {
+  color: var(--font-color);
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+}
+p a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 .email-details,
 .phone-details,
-.location-details {
+.location-details,
+.github-details,
+.linkedin-details {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -593,11 +541,10 @@ button:active {
   margin-bottom: 5px;
   font-weight: bold;
   letter-spacing: -0.5px;
-  margin: 0;
+  padding: 0.125rem;
 }
 #fullname,
 #email,
-#subject,
 #message,
 .contact-form textarea {
   margin-bottom: 1rem;
@@ -620,7 +567,7 @@ button:active {
   cursor: pointer;
   font-weight: bold;
   letter-spacing: -0.5px;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease;
 }
 #submit:hover {
   background-color: #161616;
@@ -631,19 +578,6 @@ button:active {
 #submit:active {
   opacity: 0.85;
   box-shadow: none;
-}
-/* MEDIA QUERIES */
-@media (max-width: 64rem) {
-  .project-box {
-    flex-direction: column;
-  }
-  .project-box:nth-of-type(2) {
-    display: flex;
-    flex-direction: column;
-  }
-  .contact-header {
-    padding-top: 5rem;
-  }
 }
 /* ANIMATIONS */
 /* Open Source Location Icon From Uiverse.io byvikramsinghnegi */
@@ -777,4 +711,72 @@ footer {
   100% {
     background-position-x: 0;
   }
+}
+/* NAVIGATION BAR ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* WELCOME SECTION ANIMATION */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* SCROLL ANIMATIONS */
+.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skills-list > li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.skills-list > li.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-list > li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.skills-list > li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.skills-list > li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.skills-list > li:nth-child(4) {
+  transition-delay: 0.25s;
+}
+.skills-list > li:nth-child(5) {
+  transition-delay: 0.3s;
+}
+.skills-list > li:nth-child(6) {
+  transition-delay: 0.35s;
+}
+.skills-list > li:nth-child(7) {
+  transition-delay: 0.4s;
+}
+.skills-list > li:nth-child(8) {
+  transition-delay: 0.45s;
+}
+.skills-list > li:nth-child(9) {
+  transition-delay: 0.5s;
 }

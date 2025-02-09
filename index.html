@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <!--LINKS-->
     <link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Portfolio Website</title>
+<script defer src="app.js"></script>
+    <title>Kevin Le - Portfolio Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body class="finisher-header">
@@ -23,13 +26,13 @@
 				<label for="sidebar-active" class="close-sidebar-button">
 					<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="undefined"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
 					</label>
-			<a class="header-name" href="#welcome-section"><span class="highlight">KL</span></a>
+			<a class="header-name" href="#welcome-section"><span class="highlight">Kevin Le</span></a>
 			<a class="nav-link" href="#welcome-section">Home</a>
 			<a class="nav-link" href="#about-me-section">About</a>
 			<a class="nav-link" href="#skills-section">Skills</a>
 			<a class="nav-link" href="#projects">Projects</a>
 			<a class="nav-link" href="#contact-section">Contact</a>
-			<button class="hire-me">Hire Me</button>
+			<button class="resume">Download Resume</button>
 			</div>
 	</nav>
 	</header>
@@ -38,40 +41,22 @@
 <section id="welcome-section">
 	<div class="welcome-container">
 		<div class="welcome-text">
-			<p class="intro-text">HELLO WORLD!</p>
-			<h1>I'm Kevin Le</h1>
-			<p class="sub-text">I am an <span class="highlight">IT Graduate</span> located in</p>
-			<div class="location">
-				<div class="loader-shape-3">
-				</div>
-				<p class="location-text">Melbourne, VIC, Australia</p>
-			</div>
-			<div class="welcome-buttons"><button class="contact-btn">Contact Me</button> <button class="resume-btn">Download Resume</button></div>
-			<!--SOCIAL ICONS-->
-			<div class="social-icons">
-				<a id="profile-link" target="_blank" href="https://github.com/Kaven101/Projects.git"><i class="fa fa-github"></i></a>
-        		<a id="profile-link 2" target="_blank" href="https://linkedin.com/in/kevin-le101"><i class="fa fa-linkedin-square"></i><a>
-        		<a href=""><i class="fa fa-envelope"></i></a>
-			</div>
+			<h1 class="name-intro">Kevin Le</h1>
+			<h1 class="subtext-intro">Aspiring <span class="highlight">Developer</span></h1>
 		</div>
-		<!-- PROFILE PICTURE -->
-		<div class="welcome-image">
-			<div class="welcome-image-inner">
-				<div class="welcome-image-front"><img id="portrait-icon" src="https://i.redd.it/v8z0crk5gho71.png" alt="Portfolio Portrait" /></div>
-				<div class="welcome-image-back"><img id="secret-portrait-icon" src="https://i.pinimg.com/originals/72/fb/4e/72fb4e9d72d19fbe3860f4cb89bc3bd6.gif" alt="Secret Portrait" /></div>
-			</div>
+		<div class="circle">
 		</div>
 	</div>
 </section>
 <!-- ABOUT ME SECTION -->
 <section id="about-me-section" class="about-me">
-	<h2 class="about-me-header">About Me</h2>
+	<h2 class="about-me-header hidden">About Me</h2>
 	<div class="about-me-container">
-		<div class="about-me-text">
-			<h2 class="summary-header primary">Professional Summary</h2>
+		<div class="about-me-text hidden">
+			<h2 class="summary-header primary ">Professional Summary</h2>
 			<p class="about-me paragraph">An IT graduate with a strong academic foundation in problem solving. Through my efforts in university and other relevant experiences, I have developed practical skills in configuring IT systems, programming, managing databases, troubleshooting, and collaborating effectively in team settings.</p>
 		</div>
-		<div class="education-text">
+		<div class="education-text hidden">
 			<h2 class="education-header secondary">Education</h2>
 			<p class="education-title">Bachelor of Information Technology</p>
 			<p class="education-subtext">RMIT University - 2024</p>
@@ -80,7 +65,7 @@
 			<p class="education-title">Diploma of Information Technology</p>
 			<p class="education-subtext">RMIT University - 2022</p>
 		</div>
-		<div class="certificate-text">
+		<div class="certificate-text hidden">
 			<h2 class="certificate-header tertiary">Certificates</h2>
 			<p class="certificate-title">Responsive Web Design Certificate</p>
 			<p class="certificate-subtext">FreeCodeCamp - 2025</p>
@@ -91,47 +76,46 @@
 </section>
 <!--SKILLS SECTION -->
 <!-- Make Bento Grid: Front-end, Back-end, Tools, Learning -->
-<section id="skills-section" class="skills">
-	<h2 class="skills-header">My Tech Stack</h2>
+<section id="skills-section" class="skills ">
+	<h2 class="skills-header hidden">My Tech Stack</h2>
 	<div class="skills-container">
-		<div class="skills-card">
+		<div class="skills-card hidden">
 			<h3 class="skills-card-header primary">Proficiencies</h3>
 			<ul class="skills-list one">
-				<li>HTML5</li>
-				<li>CSS3</li>
-				<li>MongoDB</li>
-				<li>Linux Ubuntu</li>
-				<li>NoSQL</li>
-				<li>SQL</li>
+				<li class="hidden">HTML5</li>
+				<li class="hidden">CSS3</li>
+				<li class="hidden">MongoDB</li>
+				<li class="hidden">Linux Ubuntu</li>
+				<li class="hidden">NoSQL</li>
+				<li class="hidden"> SQL</li>
 			</ul>
 		</div>
-		<div class="skills-card">
+		<div class="skills-card hidden">
 			<h3 class="skills-card-header secondary">Familiarities</h3>
 			<ul class="skills-list two">
-				<li>JavaScript</li>
-				<li>Express</li>
-				<li>NodeJs</li>
-				<li>ReactJs</li>
-				<li>Apache</li>
-				<li>Kali Linux</li>
-				<li>Python</li>
-				<li>Java</li>
-				<li>C#</li>
+				<li class="hidden">JavaScript</li>
+				<li class="hidden">Express</li>
+				<li class="hidden">NodeJs</li>
+				<li class="hidden">ReactJs</li>
+				<li class="hidden">Apache</li>
+				<li class="hidden">Kali Linux</li>
+				<li class="hidden">Python</li>
+				<li class="hidden">Java</li>
+				<li class="hidden">C#</li>
 			</ul>
 		</div>
-		<div class="skills-card">
+		<div class="skills-card hidden">
 			<h3 class="skills-card-header tertiary">Polishing</h3>
 			<ul class="skills-list three">
-				<li>JavaScript</li>
+				<li class="hidden">JavaScript</li>
 			</ul>
 		</div>
 	</div>
 </section>
 <!-- PROJECT SECTION -->
 <section id="projects" class="projects">
-	<h2 class="project-header">My Work</h2>
-	<div class="project-container">
-		<section class="project-box">
+	<h2 class="project-header hidden">My Work</h2>
+		<section class="project-box hidden">
 			<div class="project-tile"><img /></div>
 			<div class="project-description">
 				<h2 class="project-title primary">Project 1</h2>
@@ -151,7 +135,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="project-box">
+		<section class="project-box hidden">
 			<div class="project-tile"><img /></div>
 			<div class="project-description">
 				<h2 class="project-title secondary">Project 2</h2>
@@ -168,7 +152,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="project-box">
+		<section class="project-box hidden">
 			<div class="project-tile"><img /></div>
 			<div class="project-description">
 				<h2 class="project-title tertiary">Project 3</h2>
@@ -187,38 +171,44 @@
 				</div>
 			</div>
 		</section>
-	</div>
 </section>
 <!--CONTACT SECTION -->
 <section id="contact-section" class="contact">
-	<h2 class="contact-header">Contact Me</h2>
+	<h2 class="contact-header hidden">Get In Touch</h2>
 	<div class="contact-container"><!--CONTACT INFO -->
-		<div class="contact-info">
+		<div class="contact-info hidden">
 			<h3>Contact Information</h3>
 			<div class="email-details">
 			<i class="fa fa-envelope-o"></i>
-			<p>businesskevinl360@gmail.com</p>
+			<button class="copy-button">businesskevinl360@gmail.com</button>
 			</div>
 			<div class="phone-details">
 			<i class="fa fa-mobile"></i>
-			<p>0432 333 800</p>
+			<p>0432 333 800</p> 
 			</div>
 			<div class="location-details">
 			<div class="loader-shape-3"></div>
-			<p>Melbourne, VIC, Australia</p>
+			<p><a target="_blank" href="https://www.google.com/maps/place/Melbourne+VIC/@-37.9721066,144.723503,10z/data=!3m1!4b1!4m6!3m5!1s0x6ad646b5d2ba4df7:0x4045675218ccd90!8m2!3d-37.8136276!4d144.9630576!16zL20vMGNoZ3pt?hl=en&entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D">Melbourne, VIC, Australia</a></p>
+			</div>
+			<div class="github-details">
+			<i class="fa fa-github"></i>
+			<p><a href="https://github.com/Kaven101", target="_blank">Kaven101</a></p>
+			</div>
+			<div class="linkedin-details">
+			<i class="fa fa-linkedin-square"></i>
+			<p><a href="https://www.linkedin.com/in/kevin-le101/", target="_blank">kevin-le101</a></p>
 			</div>
 		</div>
 		<!--CONTACT FORM -->
-		<div class="contact-form">
-			<form id="contact-form" action="" method="post">
+		<div class="contact-form hidden">
+			<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+				<input type="hidden" name="access_key" value="0e9ed927-fe77-471d-959e-5c820f2c1e9c">
 				<label>Full Name</label>
-				 <input id="fullname" name="fullname" type="text" placeholder="Enter full name..." />
+				 <input id="fullname" name="fullname" type="text" placeholder="Enter full name..." required/>
 			   <label>Email</label>
-					<input id="email" name="email" type="email" placeholder="Enter email address..." />
-					<label>Subject</label>
-					<input id="subject" name="subject" type="text" placeholder="Enter subject..." />
+					<input id="email" name="email" type="email" placeholder="Enter email address..." required/>
 					<label>Message</label>
-					<textarea id="message" name="message" placeholder="Enter message..."></textarea>
+					<textarea id="message" name="message" placeholder="Enter message..." required></textarea>
 					<input id="submit" class="btn" type="submit" value="Send Message" />
 		</form>
 		</div>
