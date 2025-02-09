@@ -395,13 +395,8 @@ nav svg {
   margin: 1rem;
   aspect-ratio: 16/9 auto;
   width: clamp(120px, 90%, 500px);
-  transition: transform 0.2s ease;
   line-height: 85%;
   letter-spacing: -1px;
-}
-.project-tile:hover {
-  transform: translateY(-10px);
-  transition: transform 0.3s ease;
 }
 /*Project Links */
 .fa-external-link,
