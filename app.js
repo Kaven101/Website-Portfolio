@@ -23,9 +23,8 @@ document
   .addEventListener("click", function () {
     // Open the modal
     document.getElementById("pdfPreviewModal").style.display = "flex";
-
-    // Set the source of the iframe to the resume PDF
-    document.getElementById("pdfPreview").src = "/images&pdf/Resume.pdf";
+    document.getElementById("pdfPreview").src =
+      "https://kaven101.github.io/Website-Portfolio/images&pdf/Resume.pdf";
   });
 
 document.getElementById("closeModal").addEventListener("click", function () {
@@ -38,7 +37,8 @@ document
   .addEventListener("click", function () {
     // Download the PDF
     const link = document.createElement("a");
-    link.href = "/images&pdf/Resume.pdf";
+    link.href =
+      "https://kaven101.github.io/Website-Portfolio/images&pdf/Resume.pdf";
     link.download = "Resume.pdf";
     link.click();
   });
