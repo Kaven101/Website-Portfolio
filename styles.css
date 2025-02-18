@@ -226,6 +226,7 @@ iframe {
 
 .download-btn {
   font-size: 1rem;
+  font-weight: 500;  
   position: absolute;
   top: 2rem;
   right: 5rem;
