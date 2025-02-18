@@ -16,7 +16,6 @@ Welcome to my personal web portfolio, a showcase of my skills, projects, and exp
 ## 🎨 Design Highlights
 
 - **Color Palette**: A modern dark theme with gradients and vibrant highlight colors.
-- **Typography**: Clean, readable fonts (Noto Sans) for a professional look.
 - **Animations**: Subtle hover and wave animations to enhance interactivity and visual appeal.
 - **Icons**: Social media and action icons powered by Font Awesome.
 
