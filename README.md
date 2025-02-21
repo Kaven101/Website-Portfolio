@@ -24,7 +24,7 @@ Welcome to my personal web portfolio, a showcase of my skills, projects, and exp
 - **HTML5**: Structuring the content of the website.
 - **CSS3**: Styling, animations, and responsive design.
 - **Font Awesome**: For social media and navigation icons.
-- **Google Fonts**: Noto Sans for typography.
+- **Google Fonts**: Montserrat for typography.
 
 ## 🚀 Future Enhancements
 
